@@ -1,36 +1,28 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { StyleSheet } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import AuthStack from './src/navigation/AuthStack';
 
 // Section component for displaying sections of content
-const Section = ({ children, style }) => (
-  <View style={style}>
-    {children}
-  </View>
-);
+// const Section = ({ children, style }) => (
+//   <View style={style}>
+//     {children}
+//   </View>
+// );
 
 function App() {
 
   return (
-    <Section style={styles.flex}>
-      <Text style={styles.h1}>Hello World</Text>
-      {/* <AuthStack /> */}
-    </Section>
+    // <Section style={styles.flex}>
+    //   <Text style={styles.h1}>Hello World</Text>
+    //   {/* <AuthStack /> */}
+    // </Section>
+        <NavigationContainer>
+          <AuthStack />
+        </NavigationContainer>
+
     
   );
 }
