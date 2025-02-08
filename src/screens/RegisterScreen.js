@@ -55,7 +55,7 @@ const RegisterScreen = ({navigation}) => {
         <View style={{flexDirection:'row', justifyContent:'center',marginBottom: 30}}>
         <Text>Already registered?</Text>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={{color:'#AD40AF',fontWeight:'700'}}> Login</Text>
+        <Text style={{color:'#17348e',fontWeight:'700'}}> Login</Text>
         </TouchableOpacity>
         </View>
 

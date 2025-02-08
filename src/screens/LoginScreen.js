@@ -13,7 +13,7 @@ const LoginScreen = ({navigation}) => {
                <LoginSVG
                height={300}
                width={300} /></View> */}
-        <Text style={{fontFamily:'Roboto', fontWeight:'500', fontSize: 28, color:'#333', marginBottom: 30}}>Login</Text>
+        <Text style={{fontFamily:'Roboto', fontWeight:'500', fontSize: 28, color:'#17348e', marginBottom: 30}}>Login</Text>
         {/* EMAIL */}
         <View style={{flexDirection:'row', borderBottomColor:'#ccc', borderBottomWidth:1, marginBottom: 25}}>
             {/* add icon here */}
@@ -29,7 +29,7 @@ const LoginScreen = ({navigation}) => {
             <TextInput placeholder="Password" style={{fontSize: 20, marginBottom: 10, flex:1, paddingVertical:0}} secureTextEntry={true}/>
             <TouchableOpacity onPress={() => {}}>
                 {/* Need to create a method for forgotten password */}
-                <Text style={{color:'#AD40AF', fontWeight:'700'}}>Forgot?</Text>
+                <Text style={{color:'#17348e', fontWeight:'700'}}>Forgot?</Text>
             </TouchableOpacity>
         </View>
         
@@ -44,7 +44,7 @@ const LoginScreen = ({navigation}) => {
         <View style={{flexDirection:'row', justifyContent:'center',marginBottom: 30}}>
         <Text>New to BP Tours?</Text>
         <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Text style={{color:'#AD40AF',fontWeight:'700'}}> Register</Text>
+        <Text style={{color:'#17348e',fontWeight:'700'}}> Register</Text>
         </TouchableOpacity>
         </View>
 
