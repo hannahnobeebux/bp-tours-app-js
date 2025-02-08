@@ -2,6 +2,7 @@ import React from 'react';
 
 import { View, Text, Button, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 // import LoginSVG from '../assets/login.svg';
+import CustomButton from '../components/CustomButton';
 
 const LoginScreen = ({navigation}) => {
     return (
@@ -32,9 +33,7 @@ const LoginScreen = ({navigation}) => {
             </TouchableOpacity>
         </View>
         
-        <TouchableOpacity onPress={() => {}} style={{backgroundColor:'#AD40AF', padding:20, borderRadius:10, marginBottom:30}}>
-            <Text style={{textAlign:'center',fontWeight:'700',fontSize:16,color:'#fff'}}>Login</Text>
-        </TouchableOpacity>
+        <CustomButton label={"Login"} onPress={()=>{}}/>
 
         <Text style={{textAlign: 'center', color: '#666', marginBottom: 30}}>Or login with...</Text>
 

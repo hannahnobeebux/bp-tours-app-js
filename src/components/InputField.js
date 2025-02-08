@@ -12,7 +12,7 @@ export default function InputField({
   return (
     <View style={{flexDirection:'row', borderBottomColor:'#ccc', borderBottomWidth:1, marginBottom: 25}}>
         {/* add icon here */}
-        <Text>{icon}</Text>
+        <Text style={{fontSize: 20, marginBottom: 10, color:'#17348e', marginRight: 5}}>{icon}</Text>
         {/* adding paddingVertical:0 so the width is consistent on android devices too */}
         {inputType === 'password' ?
         (

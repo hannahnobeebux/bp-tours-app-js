@@ -4,6 +4,7 @@ import { View, Text, Button, SafeAreaView, TextInput, TouchableOpacity} from 're
 import InputField from '../components/InputField';
 // Use a SVG image for the register screen instead 
 // import LoginSVG from '../assets/login.svg';
+import CustomButton from '../components/CustomButton';
 
 const RegisterScreen = ({navigation}) => {
     return (
@@ -21,22 +22,29 @@ const RegisterScreen = ({navigation}) => {
         label={'Full Name'}
         icon={'👤'}
         />
-       
-        {/* PASSWORD */}
-        <View style={{flexDirection:'row', borderBottomColor:'#ccc', borderBottomWidth:1, marginBottom: 25}}>
-            {/* add icon here */}
-            <Text style={{fontSize: 20, marginBottom: 10, color:'#17348e', marginRight: 5}}>🔑</Text>
-            {/* adding paddingVertical:0 so the width is consistent on android devices too */}
-            <TextInput placeholder="Password" style={{fontSize: 20, marginBottom: 10, flex:1, paddingVertical:0}} secureTextEntry={true}/>
-            <TouchableOpacity onPress={() => {}}>
-                {/* Need to create a method for forgotten password */}
-                <Text style={{color:'#AD40AF', fontWeight:'700'}}>Forgot?</Text>
-            </TouchableOpacity>
-        </View>
         
-        <TouchableOpacity onPress={() => {}} style={{backgroundColor:'#AD40AF', padding:20, borderRadius:10, marginBottom:30}}>
-            <Text style={{textAlign:'center',fontWeight:'700',fontSize:16,color:'#fff'}}>Login</Text>
-        </TouchableOpacity>
+        {/* EMAIL ADDRESS */}
+        <InputField
+        label={'Email Address'}
+        icon={'@'}
+        keyboardType={'email-address'}
+        />
+
+        {/* PASSWORD */}
+        <InputField
+        label={' Password'}
+        icon={'🔑'}
+        inputType={'password'}
+        />
+
+        {/* CONFIRM PASSWORD */}
+        <InputField
+        label={' Confirm Password'}
+        icon={'🔑'}
+        inputType={'password'}
+        />
+
+        <CustomButton label={"Register"} onPress={()=>{}}/>
 
         <Text style={{textAlign: 'center', color: '#666', marginBottom: 30}}>Or login with...</Text>
 
@@ -50,7 +58,6 @@ const RegisterScreen = ({navigation}) => {
         <Text style={{color:'#AD40AF',fontWeight:'700'}}> Login</Text>
         </TouchableOpacity>
         </View>
-
 
         </View>
         </SafeAreaView>
