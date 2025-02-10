@@ -23,6 +23,27 @@ target 'BPToursJavascript' do
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
+  # Firebase dependencies (Added safely)
+  use_modular_headers! # Required for Firebase Auth
+
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'GoogleUtilities', :modular_headers => true
+  pod 'FirebaseCore', :modular_headers => true
+  pod 'FirebaseAuthInterop', :modular_headers => true
+  pod 'FirebaseAppCheckInterop', :modular_headers => true
+  pod 'RecaptchaInterop', :modular_headers => true
+  pod 'FirebaseCoreInternal', :modular_headers => true
+
+  # Do NOT specify deployment_target for BoringSSL-GRPC and PromisesObjC as they don't support it
+  pod 'BoringSSL-GRPC'
+  pod 'PromisesObjC'
+  pod 'abseil'
+  pod 'gRPC-C++'
+  pod 'gRPC-Core'
+  pod 'leveldb-library'
+  
   post_install do |installer|
     # https://github.com/facebook/react-native/blob/main/packages/react-native/scripts/react_native_pods.rb#L197-L202
     react_native_post_install(
@@ -33,3 +54,4 @@ target 'BPToursJavascript' do
     )
   end
 end
+

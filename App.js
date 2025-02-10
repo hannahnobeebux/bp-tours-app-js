@@ -2,8 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import { StyleSheet } from 'react-native';
-
-import AuthStack from './src/navigation/AuthStack';
+import Routes from './src/navigation/Routes';
 
 // Section component for displaying sections of content
 // const Section = ({ children, style }) => (
@@ -20,7 +19,7 @@ function App() {
     //   {/* <AuthStack /> */}
     // </Section>
         <NavigationContainer>
-          <AuthStack />
+          <Routes />
         </NavigationContainer>
 
     

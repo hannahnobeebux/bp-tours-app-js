@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 
 import { View, Text, Button, SafeAreaView, TextInput, TouchableOpacity} from 'react-native';
 import InputField from '../components/InputField';
 // Use a SVG image for the register screen instead 
 // import LoginSVG from '../assets/login.svg';
 import CustomButton from '../components/CustomButton';
+import { AuthContext } from '../navigation/AuthProvider';
 
 const RegisterScreen = ({navigation}) => {
+    const [email, setEmail] = useState();
+    const [password, setPassword] = useState();
+    const {register} = useContext(AuthContext);
+
     return (
         // SafeAreaView ensure that the content is not hidden by the status bar
         <SafeAreaView style={{flex:1,justifyContent:'center'}}>
@@ -25,6 +30,7 @@ const RegisterScreen = ({navigation}) => {
         
         {/* EMAIL ADDRESS */}
         <InputField
+        onChangeText={(userEmail) => setEmail(userEmail)}
         label={'Email Address'}
         icon={'@'}
         keyboardType={'email-address'}
@@ -32,6 +38,7 @@ const RegisterScreen = ({navigation}) => {
 
         {/* PASSWORD */}
         <InputField
+        onChangeText={(userPassword) => setPassword(userPassword)}
         label={' Password'}
         icon={'🔑'}
         inputType={'password'}
@@ -55,7 +62,9 @@ const RegisterScreen = ({navigation}) => {
         <View style={{flexDirection:'row', justifyContent:'center',marginBottom: 30}}>
         <Text>Already registered?</Text>
         <TouchableOpacity onPress={() => navigation.goBack()}>
-        <Text style={{color:'#17348e',fontWeight:'700'}}> Login</Text>
+        <Text 
+        onPress={() => register(email, password)}
+        style={{color:'#17348e',fontWeight:'700'}}> Login</Text>
         </TouchableOpacity>
         </View>
 
