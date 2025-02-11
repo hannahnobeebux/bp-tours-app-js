@@ -22,9 +22,21 @@ export default function HomeScreen({navigation}) {
     //   );
 
     const [searchQuery, setSearchQuery] = useState('');
-    const filteredActivities = activities.filter(activity =>
-        activity.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    const [selectedCategory, setSelectedCategory] = useState('');
+
+    const categories = [...new Set(activities.map(activity => activity.category))];
+
+    const filteredActivities = activities.filter(activity => {
+        const matchesSearch = activity.name.toLowerCase().includes(searchQuery.toLowerCase());
+        const matchesCategory = selectedCategory ? activity.category === selectedCategory : true;
+        return matchesSearch && matchesCategory;
+    });
+
+    //to reset after searching or filtering 
+    const resetFilters = () => {  
+        setSearchQuery('');
+        setSelectedCategory('');
+     }
 
 
     return (
@@ -71,6 +83,49 @@ export default function HomeScreen({navigation}) {
                       }}
                   />
               </View>
+
+              {/* Category Filter */}
+              <View style={{ marginVertical: 15 }}>
+                    <Text style={{ fontSize: 18 }}>Filter by Category</Text>
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                        {categories.map(category => (
+                            <TouchableOpacity 
+                                key={category} 
+                                onPress={() => setSelectedCategory(category)} 
+                                style={{
+                                    backgroundColor: selectedCategory === category ? '#0aada8' : '#f0f0f0',
+                                    paddingVertical: 8,
+                                    paddingHorizontal: 15,
+                                    marginRight: 10,
+                                    borderRadius: 20,
+                                    marginTop: 10,
+                                }}
+                            >
+                                <Text style={{
+                                    color: selectedCategory === category ? 'white' : '#333',
+                                    fontSize: 16,
+                                }}>
+                                    {category}
+                                </Text>
+                            </TouchableOpacity>
+                        ))}
+                    </ScrollView>
+                </View>
+
+                {/* Refresh Button */}
+                <TouchableOpacity 
+                    onPress={resetFilters}
+                    style={{
+                        // backgroundColor: '#0aada8',
+                        paddingVertical: 10,
+                        // paddingHorizontal: 20,
+                        borderRadius: 8,
+                        marginBottom: 20,
+                        alignSelf: 'flex-start',
+                    }}
+                >
+                    <Text style={{ color: '#0aada8', fontSize: 16 }}>🔄 Refresh</Text>
+                </TouchableOpacity>
               
               {/* Section Title and See All Button */}
               <View style={{marginVertical: 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
@@ -82,16 +137,16 @@ export default function HomeScreen({navigation}) {
 
          {/* Activities List */}
          <ScrollView>
-                {filteredActivities.length > 0 ? (
-                    filteredActivities.map(activity => (
-                        <ActivityCard key={activity.id} activity={activity} navigation={navigation} />
-                    ))
-                ) : (
-                    <Text style={{ textAlign: 'center', marginTop: 20, fontSize: 16, color: 'gray' }}>
-                        No activities found.
-                    </Text>
-                )}
-            </ScrollView>
+                    {filteredActivities.length > 0 ? (
+                        filteredActivities.map(activity => (
+                            <ActivityCard key={activity.id} activity={activity} navigation={navigation} />
+                        ))
+                    ) : (
+                        <Text style={{ textAlign: 'center', marginTop: 20, fontSize: 16, color: 'gray' }}>
+                            No activities found.
+                        </Text>
+                    )}
+                </ScrollView>
 
               {/* Carousel Section */}
               {/* <Carousel
