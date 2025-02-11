@@ -18,7 +18,7 @@ export default function HomeScreen({navigation}) {
     // };
 
     const renderActivity = ({ item }) => (
-        <ActivityCard activity={item} onPress={(activity) => console.log('Clicked:', activity.name)} />
+        <ActivityCard activity={item}/>
       );
     
 
@@ -73,13 +73,13 @@ export default function HomeScreen({navigation}) {
                   </TouchableOpacity>
               </View>
 
-              {/* Activity Grid */}
-        <FlatList
+         {/* Activity Grid */}
+         <FlatList
           data={activities}
           renderItem={renderActivity}
           keyExtractor={(item) => item.id.toString()}
-          numColumns={2}  // Display in 2 columns
-          columnWrapperStyle={{ justifyContent: 'space-between' }} // Space between grid items
+          numColumns={2} // 2 cards per row
+          columnWrapperStyle={{ justifyContent: 'space-between' }}
         />
 
               {/* Carousel Section */}
