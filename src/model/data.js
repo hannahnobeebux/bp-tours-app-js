@@ -55,5 +55,89 @@ export const activities = [
         price: "£15 for adults, £10 for children",
         age_group: "Kids (and families)"
       }
+    },
+    {
+      id: 4,
+      name: "Blackpool Pleasure Beach",
+      category: "Theme Park",
+      preview: "Experience thrilling rides and family fun at Blackpool Pleasure Beach.",
+      image: require("../assets/pleasure-beach.jpeg"),
+      details: {
+        description: "One of the UK's most famous amusement parks, Blackpool Pleasure Beach features roller coasters, family rides, and entertainment for all ages. Don't miss The Big One, one of the tallest roller coasters in Europe!",
+        duration: "Full day",
+        location: "Blackpool Pleasure Beach, FY4",
+        price: "£35 per person",
+        age_group: "All ages"
+      }
+    },
+    {
+      id: 5,
+      name: "Blackpool Tower Circus",
+      category: "Entertainment",
+      preview: "Watch an incredible live circus performance inside Blackpool Tower.",
+      image: require("../assets/tower-circus.jpeg"),
+      details: {
+        description: "The Blackpool Tower Circus is home to jaw-dropping acrobatics, daring stunts, and hilarious comedy acts. A fantastic show suitable for the whole family!",
+        duration: "2 hours",
+        location: "Blackpool Tower, FY1",
+        price: "£20 per person",
+        age_group: "All ages"
+      }
+    },
+    {
+      id: 6,
+      name: "Madame Tussauds Blackpool",
+      category: "Museum",
+      preview: "Meet your favorite celebrities at Madame Tussauds wax museum.",
+      image: require("../assets/madame-tussauds.jpeg"),
+      details: {
+        description: "Come face-to-face with lifelike wax figures of famous actors, musicians, and sports stars. Pose for selfies with A-listers and enjoy interactive exhibits.",
+        duration: "2 hours",
+        location: "87-89 Promenade, Blackpool",
+        price: "£18 per person",
+        age_group: "All ages"
+      }
+    },
+    {
+      id: 7,
+      name: "SEA LIFE Blackpool",
+      category: "Aquarium",
+      preview: "Discover an underwater world with sharks, turtles, and more.",
+      image: require("../assets/sea-life.jpeg"),
+      details: {
+        description: "Explore marine life at SEA LIFE Blackpool, featuring ocean tunnels, touch pools, and interactive exhibits where you can learn about conservation efforts.",
+        duration: "2 hours",
+        location: "Promenade, Blackpool FY1",
+        price: "£16 per person",
+        age_group: "All ages"
+      }
+    },
+    {
+      id: 8,
+      name: "Blackpool Tram Tour",
+      category: "Sightseeing",
+      preview: "Take a ride on a classic Blackpool tram along the coast.",
+      image: require("../assets/tram-tour.jpeg"),
+      details: {
+        description: "Enjoy a guided tour of Blackpool from a historic tram. See the famous Illuminations, the beach, and major landmarks from a unique perspective.",
+        duration: "1 hour",
+        location: "Blackpool Tramway",
+        price: "£5 per person",
+        age_group: "All ages"
+      }
+    },
+    {
+      id: 9,
+      name: "Odeon Blackpool Cinema",
+      category: "Entertainment",
+      preview: "Watch the latest blockbuster movies in a comfortable cinema setting.",
+      image: require("../assets/cinema.jpeg"),
+      details: {
+        description: "Enjoy a night out at the Odeon Blackpool with the latest Hollywood movies, comfy seating, and tasty snacks.",
+        duration: "Varies",
+        location: "Rigby Road, Blackpool",
+        price: "£10 per person",
+        age_group: "All ages"
+      }
     }
   ];

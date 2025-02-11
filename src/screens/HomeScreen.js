@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity, ImageBackground, TextInput, FlatList } from 'react-native'
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-gesture-handler'
 // import Carousel from 'react-native-snap-carousel';
@@ -20,7 +20,12 @@ export default function HomeScreen({navigation}) {
     // const renderActivity = ({ item }) => (
     //     <ActivityCard activity={item}/>
     //   );
-    
+
+    const [searchQuery, setSearchQuery] = useState('');
+    const filteredActivities = activities.filter(activity =>
+        activity.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+
 
     return (
       <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
@@ -56,6 +61,8 @@ export default function HomeScreen({navigation}) {
                   <Text style={{marginRight:5}}>🔍</Text>
                   <TextInput 
                       placeholder="Search"
+                      value={searchQuery}
+                      onChangeText={text => setSearchQuery(text)}
                       style={{
                           flex: 1, 
                           fontSize: 16,
@@ -73,14 +80,18 @@ export default function HomeScreen({navigation}) {
                   </TouchableOpacity> */}
               </View>
 
-         {/* Activity List (Grid Format) */}
-         <FlatList
-                data={activities}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => <ActivityCard activity={item} />}
-                numColumns={2}
-                columnWrapperStyle={{ justifyContent: 'space-between' }}
-            />
+         {/* Activities List */}
+         <ScrollView>
+                {filteredActivities.length > 0 ? (
+                    filteredActivities.map(activity => (
+                        <ActivityCard key={activity.id} activity={activity} navigation={navigation} />
+                    ))
+                ) : (
+                    <Text style={{ textAlign: 'center', marginTop: 20, fontSize: 16, color: 'gray' }}>
+                        No activities found.
+                    </Text>
+                )}
+            </ScrollView>
 
               {/* Carousel Section */}
               {/* <Carousel
