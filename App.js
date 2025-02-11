@@ -1,9 +1,9 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import { StyleSheet } from 'react-native';
 
 import AuthStack from './src/navigation/AuthStack';
+import AppStack from './src/navigation/AppStack';
 
 // Section component for displaying sections of content
 // const Section = ({ children, style }) => (
@@ -11,6 +11,8 @@ import AuthStack from './src/navigation/AuthStack';
 //     {children}
 //   </View>
 // );
+
+const Stack = createNativeStackNavigator();
 
 function App() {
 
@@ -20,23 +22,16 @@ function App() {
     //   {/* <AuthStack /> */}
     // </Section>
         <NavigationContainer>
-          <AuthStack />
+          <Stack.Navigator>
+            <Stack.Screen name="App" component={AppStack} options={{headerShown: false}}/>
+            <Stack.Screen name="Auth" component={AuthStack} />
+          </Stack.Navigator>
         </NavigationContainer>
 
     
   );
 }
 
-const styles = StyleSheet.create({
-  h1:{
-    color: 'red',
-  },
-  flex: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-});
 
 export default App;
 
