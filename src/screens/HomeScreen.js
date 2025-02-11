@@ -17,9 +17,9 @@ export default function HomeScreen({navigation}) {
     //     return <BannerSlider data={item}/>
     // };
 
-    const renderActivity = ({ item }) => (
-        <ActivityCard activity={item}/>
-      );
+    // const renderActivity = ({ item }) => (
+    //     <ActivityCard activity={item}/>
+    //   );
     
 
     return (
@@ -32,11 +32,11 @@ export default function HomeScreen({navigation}) {
                   alignItems: 'center',
                   marginBottom: 20
               }}>
-                  <Text style={{fontSize:18, fontFamily: 'Roboto-Medium'}}>Hello John Doe</Text>
+                  <Text style={{fontSize:18, fontFamily: 'Roboto-Medium'}}>Hello Hannah Nobeebux</Text>
                   
                   {/* User Profile Image */}
                   <ImageBackground 
-                      source={require('../assets/user-profile.jpg')} 
+                      source={require('../assets/user-profile-2.png')} 
                       style={{width:35, height:35, marginLeft: 10}} 
                       imageStyle={{borderRadius: 25}} 
                   />
@@ -68,19 +68,19 @@ export default function HomeScreen({navigation}) {
               {/* Section Title and See All Button */}
               <View style={{marginVertical: 15, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center'}}>
                   <Text style={{fontSize: 18}}>Available Activities</Text>
-                  <TouchableOpacity onPress={() => {console.log("See all clicked!")}}>
+                  {/* <TouchableOpacity onPress={() => {console.log("see all works")}}>
                       <Text style={{color: '#0aada8'}}>See all</Text>
-                  </TouchableOpacity>
+                  </TouchableOpacity> */}
               </View>
 
-         {/* Activity Grid */}
+         {/* Activity List (Grid Format) */}
          <FlatList
-          data={activities}
-          renderItem={renderActivity}
-          keyExtractor={(item) => item.id.toString()}
-          numColumns={2} // 2 cards per row
-          columnWrapperStyle={{ justifyContent: 'space-between' }}
-        />
+                data={activities}
+                keyExtractor={(item) => item.id.toString()}
+                renderItem={({ item }) => <ActivityCard activity={item} />}
+                numColumns={2}
+                columnWrapperStyle={{ justifyContent: 'space-between' }}
+            />
 
               {/* Carousel Section */}
               {/* <Carousel
