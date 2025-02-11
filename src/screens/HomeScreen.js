@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground, TextInput } from 'react-native'
+import { View, Text, TouchableOpacity, ImageBackground, TextInput, FlatList } from 'react-native'
 import React, { useRef } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { ScrollView } from 'react-native-gesture-handler'
@@ -6,6 +6,8 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { sliderData } from '../model/data';
 import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
+import ActivityCard from '../components/ActivityCard';
+import {activities} from '../model/data';
 
 export default function HomeScreen({navigation}) {
 
@@ -14,6 +16,11 @@ export default function HomeScreen({navigation}) {
     // const renderBanner = ({item, index}) => {
     //     return <BannerSlider data={item}/>
     // };
+
+    const renderActivity = ({ item }) => (
+        <ActivityCard activity={item} onPress={(activity) => console.log('Clicked:', activity.name)} />
+      );
+    
 
     return (
       <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
@@ -65,6 +72,15 @@ export default function HomeScreen({navigation}) {
                       <Text style={{color: '#0aada8'}}>See all</Text>
                   </TouchableOpacity>
               </View>
+
+              {/* Activity Grid */}
+        <FlatList
+          data={activities}
+          renderItem={renderActivity}
+          keyExtractor={(item) => item.id.toString()}
+          numColumns={2}  // Display in 2 columns
+          columnWrapperStyle={{ justifyContent: 'space-between' }} // Space between grid items
+        />
 
               {/* Carousel Section */}
               {/* <Carousel
