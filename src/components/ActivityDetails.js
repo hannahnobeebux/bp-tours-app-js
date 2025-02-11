@@ -13,7 +13,7 @@ export default function ActivityDetails({ route, navigation }) {
       <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Location: {activity.details.location}</Text>
       <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Price: {activity.details.price}</Text>
       <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Age Group: {activity.details.age_group}</Text>
-      <TouchableOpacity onPress={() => alert('Booking confirmed!')} style={{ backgroundColor: '#0aada8', padding: 15, borderRadius: 5, marginTop: 20 }}>
+      <TouchableOpacity onPress={() => alert('Booking confirmed!')} style={{ backgroundColor: '#0a2a50', padding: 15, borderRadius: 5, marginTop: 20 }}>
         <Text style={{ color: 'white', textAlign: 'center', fontSize: 18 }}>Book Activity</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.goBack()} style={{ color: '#0aada8', padding: 15, borderRadius: 5, marginTop: 10 }}>

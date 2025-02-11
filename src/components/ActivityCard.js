@@ -10,7 +10,7 @@ export default function ActivityCard({ activity }) {
           <Image source={activity.image} style={{ width: '100%', height: 150, borderRadius: 10 }} />
           <Text style={{ fontSize: 16, fontWeight: 'bold', marginTop: 10 }}>{activity.name}</Text>
           <Text style={{ fontSize: 14, color: 'gray', marginVertical: 5 }}>{activity.preview}</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('ActivityDetails', { activity })} style={{ backgroundColor: '#0aada8', padding: 10, borderRadius: 5, marginTop: 10 }}>
+          <TouchableOpacity onPress={() => navigation.navigate('ActivityDetails', { activity })} style={{ backgroundColor: '#0a2a50', padding: 10, borderRadius: 5, marginTop: 10 }}>
             <Text style={{ color: 'white', textAlign: 'center' }}>More Info</Text>
           </TouchableOpacity>
         </View>

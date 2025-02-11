@@ -93,7 +93,7 @@ export default function HomeScreen({navigation}) {
                                 key={category} 
                                 onPress={() => setSelectedCategory(category)} 
                                 style={{
-                                    backgroundColor: selectedCategory === category ? '#0aada8' : '#f0f0f0',
+                                    backgroundColor: selectedCategory === category ? '#0960c8' : '#f0f0f0',
                                     paddingVertical: 8,
                                     paddingHorizontal: 15,
                                     marginRight: 10,
