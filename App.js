@@ -24,7 +24,7 @@ function App() {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen name="App" component={AppStack} options={{headerShown: false}}/>
-            <Stack.Screen name="Auth" component={AuthStack} />
+            <Stack.Screen name="Auth" component={AuthStack} options={{headerShown: false}}/>
           </Stack.Navigator>
         </NavigationContainer>
 
