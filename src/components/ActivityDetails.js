@@ -5,7 +5,7 @@ export default function ActivityDetails({ route, navigation }) {
   const { activity } = route.params;
 
   return (
-    <View style={{ flex: 1, padding: 20, backgroundColor: 'white' }}>
+    <View style={{ flex: 1, padding: 20, backgroundColor: 'white', marginTop:50 }}>
       <Image source={activity.image} style={{ width: '100%', height: 200, borderRadius: 10 }} />
       <Text style={{ fontSize: 22, fontWeight: 'bold', marginTop: 10 }}>{activity.name}</Text>
       <Text style={{ fontSize: 16, color: 'gray', marginVertical: 10 }}>{activity.details.description}</Text>
