@@ -8,6 +8,7 @@ import BannerSlider from '../components/BannerSlider';
 import { windowWidth } from '../utils/Dimensions';
 import ActivityCard from '../components/ActivityCard';
 import {activities} from '../model/data';
+import WeatherCard from '../components/WeatherCard' 
 
 export default function HomeScreen({navigation}) {
 
@@ -42,6 +43,7 @@ export default function HomeScreen({navigation}) {
     return (
       <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
           <ScrollView style={{padding:20}}>
+
               {/* Header with user name and profile image */}
               <View style={{
                   flexDirection: 'row',
@@ -58,6 +60,8 @@ export default function HomeScreen({navigation}) {
                       imageStyle={{borderRadius: 25}} 
                   />
               </View>
+
+              <WeatherCard city="Blackpool" />
 
               {/* Search Bar */}
               <View
