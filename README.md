@@ -1,6 +1,12 @@
-# BP Tours
+# Welcome to the BP Tours iOS App! 📱🏖️
 
-## Local development and running the application using a Simulator 
+## Who are BP Tours?
+A tourism company based in Blackpool that focus on high quality day activities, suitable for friends and families. 
+
+## How will BP Tours benefit from this app?
+Customers will be able to easily book their Blackpool activities from their phones rather than having to call BP Tours or come see us in person. This increases the potential audience, as people can book their tours in advance. 
+
+## How to run the application locally?
 
 Prerequisites:
 - Xcode
