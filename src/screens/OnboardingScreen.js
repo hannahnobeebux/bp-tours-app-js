@@ -19,7 +19,6 @@ const OnboardingScreen = ({navigation})=>{
                 onPress={() => navigation.navigate('Home')}
                 style={{backgroundColor:"#17348e",padding:10,width:'90%',borderRadius:5,flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
                 <Text style={{fontWeight:'bold',fontsize:18,color:"white"}}>Let's begin!</Text>
-                {/* <Icon name="arrow-forward-ios" size={22} color="white" /> */}
                 </TouchableOpacity>
             </View>
         </SafeAreaView>
