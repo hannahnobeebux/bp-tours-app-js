@@ -41,7 +41,7 @@ export default function HomeScreen({navigation}) {
 
 
     return (
-      <SafeAreaView style={{flex:1, backgroundColor: 'white'}}>
+      <SafeAreaView style={{flex:1, backgroundColor: 'white'}} testID="activitiesScreen">
           <ScrollView style={{padding:20}}>
 
               {/* Header with user name and profile image */}
@@ -140,6 +140,7 @@ export default function HomeScreen({navigation}) {
               </View>
 
          {/* Activities List */}
+         <View testID="allActivities">
          <ScrollView>
                     {filteredActivities.length > 0 ? (
                         filteredActivities.map(activity => (
@@ -151,7 +152,7 @@ export default function HomeScreen({navigation}) {
                         </Text>
                     )}
                 </ScrollView>
-
+                </View>
               {/* Carousel Section */}
               {/* <Carousel
           ref={c => {
