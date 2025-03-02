@@ -43,3 +43,22 @@ To run the application
     - Cmd + B = Build 
 
 4. In the root, execute `npx react-native run-ios`
+
+## How to run the test suite?
+
+Prerequisites:
+- Detox 
+- Jest 
+
+To install Detox locally to the project:
+(For Mac users, using Homebrew)
+1. `npm install detox --save-dev`
+2. `brew tap wix/brew`
+3. `brew install applesimutils`
+4. Verify detox installation using: `npx detox --version` 
+
+To run the tests:
+1. Have the Metro bundler running: `npx react-native start`
+2. `npm run detox:build:ios:debug`
+3. `npm run detox:test:ios:debug  `
+
