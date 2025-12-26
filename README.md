@@ -1,5 +1,9 @@
 # Welcome to the BP Tours iOS App! 📱🏖️
 
+<img width="454" height="319" alt="image" src="https://github.com/user-attachments/assets/20ffd855-590a-4fc4-8921-ba3d9bf0af61" />
+<img width="451" height="278" alt="image" src="https://github.com/user-attachments/assets/52c16b15-34b5-4565-aadd-0fdac079c32d" />
+
+
 ## Who are BP Tours?
 A tourism company based in Blackpool that focus on high quality day activities, suitable for friends and families. 
 
